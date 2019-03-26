@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel -p 3000 watch src/index.html"
+    "start": "parcel -p 3000 watch src/index.html",
+    "docker": "docker run --rm -v $(pwd):/app -w /app testcafe/testcafe firefox test/first-test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@wdio/cli": "^5.7.6",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-sortable-hoc": "^0.8.3"
   },
   "devDependencies": {
+    "testcafe": "^1.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.9.7"
