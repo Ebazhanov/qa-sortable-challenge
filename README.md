@@ -85,6 +85,7 @@ cd to testcafe-docker folder.
 
 ```
 docker pull testcafe/testcafe:1.1.0
+docker pull testcafe/testcafe
 ```
 
 With Chromium
@@ -152,3 +153,10 @@ docker run -v `pwd`/screenshots:/tests/results -it me/testcafe-docker:latest
 1. Docker housekeeping, add `--rm` (`docker run --rm -v ...`) to remove docker container after tests end. takes up less disk space.
 2. Runs `docker image prune` and `docker containers prune` regularly to delete old images & container to reclaim back precious disk space
 3. add `-r teamcity` testcafe-cli to generate teamcity compatible report 
+
+
+    netstat -vanp tcp | grep 3000
+    lsof -t -i:3000
+
+
+    lsof -ti:3000 | xargs kill

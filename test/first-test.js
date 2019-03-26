@@ -1,12 +1,9 @@
-import { Selector } from 'testcafe';
+import { ClientFunction } from 'testcafe';
 
-fixture('Load a static page')
-    .page('qa-sortable-challenge-my/src/index.html');
+fixture('LandingPage').page('http://localhost:3000/');
 
-test('static page test', async (t) => {
-    const title = Selector('title');
-
-    await t
-        .takeScreenshot()
-        .expect(title.withText('Example').exists).ok();
+test('should allow clicking of the landing page button', async (browser) => {
+    await browser.click('.btn');
+    const PageUrl = ClientFunction(() => window.location.href);
+    await browser.expect(PageUrl()).contains('/register');
 });

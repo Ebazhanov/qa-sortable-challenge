@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel -p 3000 watch src/index.html",
-    "docker": "docker run --rm -v $(pwd):/app -w /app testcafe/testcafe firefox test/first-test.js"
+    "docker": "npm run start & docker run --rm -v $(pwd):/app -w /app testcafe/testcafe 'chromium --no-sandbox,firefox' test/first-test.js",
+    "test": "npm run start & testcafe chrome test/first-test.js"
   },
   "keywords": [],
   "author": "",
