@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel -p 3000 watch src/index.html",
-    "docker": "npm run start & docker run --rm -v $(pwd):/app -w /app testcafe/testcafe 'chromium --no-sandbox,firefox' test/first-test.js",
+    "docker": "docker run -it --rm -v `pwd`:/app -w /app testcafe/testcafe:latest 'chromium --no-sandbox,firefox' test/first-test.js",
+    "docker:test": "docker run -v `pwd`:/tests -it testcafe/testcafe:1.1.0 --skip-js-errors firefox /tests/test/first-test.js -s tests/results",
+    "docker:new": "docker run --rm -v `pwd`:/app -w /app -it testcafe/testcafe:latest firefox test/second-test.js",
     "test": "npm run start & testcafe chrome test/first-test.js"
   },
   "keywords": [],
