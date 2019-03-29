@@ -5,24 +5,30 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel -p 3000 watch src/index.html",
-    "docker": "docker run -it --rm -v `pwd`:/app -w /app testcafe/testcafe:latest 'chromium --no-sandbox,firefox' test/first-test.js",
-    "docker:test": "docker run -v `pwd`:/tests -it testcafe/testcafe:1.1.0 --skip-js-errors firefox /tests/test/first-test.js -s tests/results",
-    "docker:new": "docker run --rm -v `pwd`:/app -w /app -it testcafe/testcafe:latest firefox test/second-test.js",
-    "test": "npm run start & testcafe chrome test/first-test.js"
+    "test": "cypress run --browser electron ./cypress/integration/localhost.js",
+    "new": "node_modules\\.bin\\cypress run --browser chrome",
+    "docker": "docker-compose up"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@wdio/cli": "^5.7.6",
+    "cypress-dark": "^1.7.10",
+    "cypress-failed-log": "^2.4.1",
+    "cypress-page-object": "^1.0.0",
+    "eslint-plugin-cypress": "^2.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-sortable-hoc": "^0.8.3"
   },
   "devDependencies": {
-    "testcafe": "^1.1.0",
+    "@cypress/env-or-json-file": "^2.0.0",
+    "@cypress/schema-tools": "^4.6.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.9.7"
+    "cypress": "^3.2.0",
+    "parcel-bundler": "^1.9.7",
+    "readjson": "^1.1.4"
   }
 }

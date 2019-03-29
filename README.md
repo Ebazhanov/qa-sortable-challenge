@@ -52,3 +52,35 @@ Write a Readme file where you must detail all the steps needed to run your scrip
 
 
     lsof -ti:3000 | xargs kill
+
+In Docker
+---------
+
+- to download image
+```
+docker-compose build
+```
+
+- to run the tests in docker
+```
+docker-compose run cypress
+```
+or
+```
+docker-compose up
+```
+
+- to print all existing docker images
+```
+docker images
+```
+
+- clean all existing docker images
+```
+docker system prune --volumes -a
+```
+
+- go inside docker 
+```
+docker run --rm -it your_image_here bash
+```

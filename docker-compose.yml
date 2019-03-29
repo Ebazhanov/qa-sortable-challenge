@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+  cypress:
+    container_name: cypress
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/code
+    command: npm run test
