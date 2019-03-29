@@ -68,6 +68,8 @@ docker-compose run cypress
 or
 ```
 docker-compose up
+
+docker-compose down
 ```
 
 - to print all existing docker images
@@ -80,7 +82,11 @@ docker images
 docker system prune --volumes -a
 ```
 
-- go inside docker 
+- go inside docker + run in background 
 ```
-docker run --rm -it your_image_here bash
+docker run --rm -it your_image_here bash --name containername -d
+
+docker exec -it containername
 ```
+
+

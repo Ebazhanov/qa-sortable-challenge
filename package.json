@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel -p 3000 watch src/index.html",
-    "test": "cypress run --browser electron ./cypress/integration/localhost.js",
+    "test": "cypress run",
     "new": "node_modules\\.bin\\cypress run --browser chrome",
     "docker": "docker-compose up"
   },

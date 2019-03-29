@@ -1,9 +1,9 @@
 context('Aliasing', () => {
     beforeEach(() => {
-        cy.visit('localhost:3000')
+        cy.visit('/')
     });
 
-    it('.as() - alias a DOM element for later use', () => {
+    xit('.as() - alias a DOM element for later use', () => {
         cy.get('.as-table').find('tbody>tr')
             .first().find('td').first()
             .find('button').as('firstBtn');
@@ -12,4 +12,8 @@ context('Aliasing', () => {
             .should('have.class', 'btn-success')
             .and('contain', 'Changed')
     });
+
+    it('should run test sample', () => {
+        console.log('testing');
+    })
 });
