@@ -8,6 +8,6 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - ./:/code
-    command: /app/wait-for-it.sh localhost:3000 -t 120 -- npm run test
+    command: /src/wait-for-it.sh localhost:3000 -t 120 -- npm run test
     ports:
       - 3000:3000

@@ -5,7 +5,7 @@ FROM  cypress/browsers
 # dependencies will be installed only if the package files change
 WORKDIR /src
 COPY . ./
-COPY wait-for-it.sh /app
+COPY wait-for-it.sh ./
 
 WORKDIR .
 # by setting CI environment variable we switch the Cypress install messages

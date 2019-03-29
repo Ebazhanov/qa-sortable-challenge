@@ -89,4 +89,4 @@ docker run --rm -it your_image_here bash --name containername -d
 docker exec -it containername
 ```
 
-
+https://hackernoon.com/cypress-io-docker-the-ultimate-e2e-stack-a20ee25654b1
